@@ -1,0 +1,19 @@
+// Помощник
+ACT:=0;  //сначала сделаем стандартно, чтоб если просчитаемся, хоть что-то делал
+DX:=RND;
+DY:=RND; 
+HLP:=0;
+// если в округе тока свои
+if (NWL<>0) and (NL<>0) and (NOL<>0) and (OL<>0) and (SOL<>0) and (SL<>0) and (SWL<>0) and (WL<>0)
+then if MLL>50 then // у самого жизни много
+begin 
+// если у соседа жизни не под завязку, то свыше 50 скинуть ему. Выход сделать не забыть, а то сам помру после второй помощи :)
+ if (NWL<100) then begin ACT:=1; DX:=-1; DY:=-1; HLP:=MLL-50; exit; end; 
+ if (NL<100) then begin ACT:=1; DX:=0; DY:=-1; HLP:=MLL-50; exit; end;
+ if (NOL<100) then begin ACT:=1; DX:=1; DY:=-1; HLP:=MLL-50; exit; end;
+ if (OL<100) then begin ACT:=1; DX:=1; DY:=0; HLP:=MLL-50; exit; end;
+ if (SOL<100) then begin ACT:=1; DX:=1; DY:=1; HLP:=MLL-50; exit; end;
+ if (SL<100) then begin ACT:=1; DX:=0; DY:=1; HLP:=MLL-50; exit; end;
+ if (SWL<100) then begin ACT:=1; DX:=-1; DY:=+1; HLP:=MLL-50; exit; end;
+ if (WL<100) then begin ACT:=1; DX:=-1; DY:=0; HLP:=MLL-50; exit; end;
+end;

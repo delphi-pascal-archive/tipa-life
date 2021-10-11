@@ -1,0 +1,4 @@
+ACT:=0; 
+DX:=RND;
+DY:=RND; 
+HLP:=0;

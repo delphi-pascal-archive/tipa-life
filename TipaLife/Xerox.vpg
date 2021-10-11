@@ -1,0 +1,12 @@
+ACT:=0;
+DX:=RND;
+DY:=RND; 
+HLP:=0; 
+if NWL<>0 then begin DX:=-1; DY:=-1; end;
+if NL<>0 then begin DX:=0; DY:=-1; end;
+if NOL<>0 then begin DX:=1; DY:=-1; end;
+if OL<>0 then begin DX:=1; DY:=0; end;
+if SOL<>0 then begin DX:=1; DY:=1; end;
+if SL<>0 then begin DX:=0; DY:=1; end;
+if SWL<>0 then begin DX:=-1; DY:=+1; end;
+if WL<>0 then begin DX:=-1; DY:=0; end;

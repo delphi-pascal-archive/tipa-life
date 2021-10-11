@@ -1,0 +1,14 @@
+// Осторожный воин
+ACT:=0;  //сначала сделаем стандартно, чтоб если просчитаемся, хоть что-то делал
+DX:=RND;
+DY:=RND; 
+HLP:=0; 
+if MLL<40 then exit; // толков пинаться, если жизни мало и вдруг убьют в ответке. ps Против РАНДОМА просто воин оказался лучше
+if (NW=0) and (NWL=0) then begin DX:=-1; DY:=-1; end; 
+if (N=0) and (NL=0) then begin DX:=0; DY:=-1; end;
+if (NO=0) and (NOL=0) then begin DX:=1; DY:=-1; end;
+if (O=0) and (OL=0) then begin DX:=1; DY:=0; end;
+if (SO=0) and (SOL=0) then begin DX:=1; DY:=1; end;
+if (S=0) and (SL=0) then begin DX:=0; DY:=1; end;
+if (SW=0) and (SWL=0) then begin DX:=-1; DY:=+1; end;
+if (W=0) and (WL=0) then begin DX:=-1; DY:=0; end;

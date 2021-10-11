@@ -1,0 +1,22 @@
+// Помощник 2
+ACT:=0;  //сначала сделаем стандартно, чтоб если просчитаемся, хоть что-то делал
+DX:=RND;
+DY:=RND; 
+HLP:=0;
+// если в округе тока свои
+if (NWL<>0) and (NL<>0) and (NOL<>0) and (OL<>0) and (SOL<>0) and (SL<>0) and (SWL<>0) and (WL<>0)
+then if MLL>50 then // у самого жизни много
+begin 
+// если у соседа жизни не под завязку, то свыше 50 скинуть ему. Выход сделать не забыть, а то сам помру после второй помощи :)
+// если ему надо меньше 50 то дать меньше. Жизнь пропадает иначе. И проигрывает тогда даже РАНДОМУ
+// а так выигрывает
+ if (NWL<100) then begin ACT:=1; DX:=-1; DY:=-1; if (100-NWL)<50 then HLP:=(100-NWL) else HLP:=MLL-50; exit; end; 
+ if (NL<100) then begin ACT:=1; DX:=0; DY:=-1; if (100-NL)<50 then HLP:=(100-NL) else HLP:=MLL-50; exit; end;
+ if (NOL<100) then begin ACT:=1; DX:=1; DY:=-1; if (100-NOL)<50 then HLP:=(100-NOL) else HLP:=MLL-50; exit; end;
+
+ if (OL<100) then begin ACT:=1; DX:=1; DY:=0; if (100-OL)<50 then HLP:=(100-OL) else HLP:=MLL-50; exit; end;
+ if (SOL<100) then begin ACT:=1; DX:=1; DY:=1; if (100-SOL)<50 then HLP:=(100-SOL) else HLP:=MLL-50; exit; end;
+ if (SL<100) then begin ACT:=1; DX:=0; DY:=1; if (100-SL)<50 then HLP:=(100-SL) else HLP:=MLL-50; exit; end;
+ if (SWL<100) then begin ACT:=1; DX:=-1; DY:=+1; if (100-SWL)<50 then HLP:=(100-SWL) else HLP:=MLL-50; exit; end;
+ if (WL<100) then begin ACT:=1; DX:=-1; DY:=0; if (100-WL)<50 then HLP:=(100-WL) else HLP:=MLL-50; exit; end;
+end;
